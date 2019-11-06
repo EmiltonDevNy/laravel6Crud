@@ -15,3 +15,7 @@ Route::get('sub', function () {
     return $posts;
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
