@@ -18,4 +18,12 @@ Route::get('sub', function () {
 
 Auth::routes();
 
+Route::get('lazy-colections', function (){
+    $posts = Post::cursor();
+    dd($posts);
+    foreach ($posts as $post) {
+        print $post->title . '<br>';
+    }
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
