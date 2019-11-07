@@ -27,3 +27,6 @@ Route::get('lazy-colections', function (){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//rota para o crud de posts
+Route::resource('posts', 'PostController');
