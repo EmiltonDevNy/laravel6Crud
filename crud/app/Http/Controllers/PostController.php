@@ -48,6 +48,7 @@ class PostController extends Controller
             $post = $this->post->create($data);
 
             flash('Post Criado com sucesso!')->success();
+            return redirect()->route('posts.index');
         } catch (\Exception $_ENV) {
             if (env('APP_DEBUG')) {
                 flash($e->getMessage())->warning();
@@ -128,7 +129,7 @@ class PostController extends Controller
             $post = $this->post->findorFail($id);
             $post->delete();
             flash('Post Removido com sucesso!')->success();
-
+            return redirect()->route('posts.index');
         } catch (\Exception $_ENV) {
             if(env('APP_DEBUG')){
                 flash($e->getMessage())->warning();

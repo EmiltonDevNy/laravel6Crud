@@ -33,3 +33,10 @@
     </table>
     {{$posts->links()}}
 @endsection
+<script type="text/javascript" src="<?php echo asset('assets/js/jquery.js'); ?>"></script>
+<script>
+    $(document).ready(
+        $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    );
+</script>
+
